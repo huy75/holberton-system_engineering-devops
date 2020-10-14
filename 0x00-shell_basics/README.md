@@ -1,37 +1,28 @@
-#0-current_working-directory: print the absolute path of the current working directory.
+# 0x00. Shell, basics
 
-#1-listit: display the contents of the current working directory.
+## Resources:books:
+Read or watch:
+* [What Is “The Shell”?](https://intranet.hbtn.io/rltoken/pn2_LGNuA1yFY7zy3CQmig)
+* [Navigation](https://intranet.hbtn.io/rltoken/Hh8elGgCpj--6othR7S7GQ)
+* [Looking Around](https://intranet.hbtn.io/rltoken/84xsZOempqy5I7ZkueeIsg)
+* [A Guided Tour](https://intranet.hbtn.io/rltoken/Jp1c4V3hJiGBuVzYCtnQKw)
+* [Manipulating Files](https://intranet.hbtn.io/rltoken/wFwFXKQmSpmxYyvHvCIC-Q)
+* [Working With Commands](https://intranet.hbtn.io/rltoken/Aq3NVLBhgnQS6NYtHI8i4w)
+* [Reading Man pages](https://intranet.hbtn.io/rltoken/RohkjGiQtMHgPfj0N_k1Bw)
+* [Keyboard shortcuts for Bash](https://intranet.hbtn.io/rltoken/0HvJ2B_wSl6Oyshcn-OHrg)
+* [LTS](https://wiki.ubuntu.com/LTS)
+* [Shebang](https://intranet.hbtn.io/rltoken/ketzZf-802Fb-mSGkyPa4w)
 
-#2-bring_me_home: change the working directory to the user's home directory.
+---
+## Learning Objectives:bulb:
+What you should learn from this project:
 
-#3-listfiles: display the current directory contents in a long format.
+* What does RTFM mean?
+* What is a Shebang
 
-#4-listmorefiles: display the current directory contents, including hidden files and folders, in the long format.
+---
 
-#5-listfilesdigitonly: display the current directory contents (incl. hidden files) with digits only for user and group ID.
+### [0. Where am I?](./0-current_working_directory)
+* Write a script that prints the absolute path name of the current working directory.
 
-#6-firstdirectory: create the /tmp/holberton/ directory.
 
-#7-movethatfile: move the file betty from /tmp/ to /tmp/holberton/.
-
-#8-firstdelete: delete the file betty in /tmp/holberton/.
-
-#9-firstdirdeletion: delete the /tmp/holberton/ directory.
-
-#10-back: change the current working directory to the previous one.
-
-#11-lists: list all files in the current directory, then the parent directory, then the /boot directory.
-
-#12-file_type: print the type of /tmp/iamafile.
-
-#13-symbolic_link: create a symbolic link __ls__ to /bin/ls.
-
-#14-copy_html: copy all new or updated HTML files from the current working directory to the parent of the working directory
-
-#15-lets_move: move all files beginning with an uppercase letter to the directory /tmp/u
-
-#16-clean_emacs: deletes all files in the current working directory that end with the character ~. 
-
-#17-tree: create the ./welcome/to/holberton tree.
-
-#18-commas: list all files and directories of the current directory, separated by commas.
