@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#Write a Bash script that displays Holberton School 10 times.
+index=9
+
+until [ $index -lt 0 ];
+do
+    echo "Holberton School"
+    let index-=1
+done
