@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Lists all processes
+# u Display user-oriented format.
+# ax To see every process on the system using BSD syntax
+# f ASCII art process hierarchy (forest)
+ps auxf
