@@ -76,7 +76,7 @@ Requirements:
 Example:
 
 ```
-root@d391259bf577:/# puppet apply 1-install_a_package.pp
+root@d391259bf577:/# sudo puppet apply 1-install_a_package.pp
 Notice: Compiled catalog for d391259bf577.hsd1.ca.comcast.net in environment production in 0.10 seconds
 Notice: /Stage[main]/Main/Package[puppet-lint]/ensure: created
 Notice: Finished catalog run in 2.83 seconds
@@ -120,7 +120,7 @@ root@d391259bf577:/# ./killmenow
 Terminal #1 - executing my manifest
 
 ```
-root@d391259bf577:/# puppet apply 2-execute_a_command.pp
+root@d391259bf577:/# sudo puppet apply 2-execute_a_command.pp
 Notice: Compiled catalog for d391259bf577.hsd1.ca.comcast.net in environment production in 0.01 seconds
 Notice: /Stage[main]/Main/Exec[killmenow]/returns: executed successfully
 Notice: Finished catalog run in 0.10 seconds
