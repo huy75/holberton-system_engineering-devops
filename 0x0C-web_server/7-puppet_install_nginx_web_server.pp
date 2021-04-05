@@ -2,6 +2,7 @@
 
 package { 'nginx':
   ensure => installed,
+  name   => 'nginx'
 }
 
 file { '/usr/share/nginx/html/index.html':
@@ -10,10 +11,11 @@ file { '/usr/share/nginx/html/index.html':
 }
 
 file_line { 'Redirection, 301':
-  path   => '/etc/nginx/sites-available/default',
-  ensure => 'present',
-  after  => 'listen 80 default_server',
-  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+  path     => '/etc/nginx/sites-available/default',
+  ensure   => 'present',
+  after    => 'server_name _;',
+  line     => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
+  multiple => true
 }
 
 service { 'nginx':
