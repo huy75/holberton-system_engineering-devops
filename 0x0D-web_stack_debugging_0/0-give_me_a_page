@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# Fix my server
+apt-get -y update
+apt-get -y install apache2
+service apache2 restart
