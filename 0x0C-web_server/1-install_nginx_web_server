@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Installs Nginx with the following requirements:
+#+    Listens on port 80.
+#+    Returns a page containing "Holberton School" when queried
+#++    at the root with a curl GET request.
+
+apt-get -y update
+apt-get -y install nginx
+
+cd /var/www/html
+echo 'Holberton School for the win!' > index.html
+
+service nginx restart
