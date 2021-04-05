@@ -1,23 +1,22 @@
 # This manifest installs ngix and adds redirect page
 
-$command = "/usr/bin/env sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default"
-
 package { 'nginx':
-  ensure   => 'installed',
-  provider => 'nginx'
+  ensure => installed,
 }
 
 file { '/usr/share/nginx/html/index.html':
-  ensure  => file,
   path    => '/usr/share/nginx/html/index.html',
   content => 'Holberton School for the win!'
 }
 
-exec { '301 redirect':
-  command => $command
+file_line { 'Redirection, 301':
+  path   => '/etc/nginx/sites-available/default',
+  ensure => 'present',
+  after  => 'listen 80 default_server',
+  line   => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
 }
 
 service { 'nginx':
   ensure  => 'running',
-  restart => 'sudo service nginx restart'
+  require => Package['nginx']
 }
