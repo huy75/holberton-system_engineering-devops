@@ -5,6 +5,12 @@ apt-get -y install nginx
 
 echo 'Holberton School for the win!' > /usr/share/nginx/html/index.html
 
-sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
+# stream editor. -i: to update the file
+# https://www.cyberciti.biz/faq/
+# how-to-use-sed-to-find-and-replace-text-in-files-in-linux-unix-shell/
+var="\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n"
+sudo sed -i "37a\ $var" /etc/nginx/sites-enabled/default
+
+# sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
 
 sudo service nginx restart
