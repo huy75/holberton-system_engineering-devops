@@ -1,8 +1,8 @@
 # This manifest installs ngix and adds redirect page
 
 package { 'nginx':
-  ensure => installed,
-  name   => 'nginx',
+  ensure => 'installed',
+  name   => 'apt',
 }
 
 file { '/usr/share/nginx/html/index.html':
