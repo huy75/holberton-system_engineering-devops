@@ -5,8 +5,7 @@ package { 'nginx':
   name   => 'nginx',
 }
 
-file { 'holberton':
-  ensure  => present,
+file { '/usr/share/nginx/html/index.html':
   path    => '/usr/share/nginx/html/index.html',
   content => 'Holberton School for the win!',
 }
@@ -21,5 +20,4 @@ file_line { 'redirect':
 service { 'nginx':
   ensure     => running,
   require    => Package['nginx'],
-  subscribe  => File_line['redirect'],
 }
