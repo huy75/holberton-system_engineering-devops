@@ -7,6 +7,5 @@ echo 'Holberton School for the win!' > /usr/share/nginx/html/index.html
 
 # stream editor. -i: to update the file
 sudo sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;' /etc/nginx/sites-available/default
-# sudo sed -i '37i\ "\n\tlocation /redirect_me {\n\t\treturn 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;\n\t}\n" /etc/nginx/sites-enabled/default'
 
 sudo service nginx restart
