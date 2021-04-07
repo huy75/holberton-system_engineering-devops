@@ -1,17 +1,17 @@
 # This manifest installs ngix and adds redirect page
 
-package { 'nginx':
+package {'nginx':
   ensure => present,
   name   => 'nginx',
 }
 
-file { '/var/www/html/index.html':
+file {'/var/www/html/index.html':
   ensure  => present,
   path    => '/var/www/html/index.html',
-  content => 'Holberton School for the win!',
+  content => 'Holberton School',
 }
 
-file_line { 'redirect':
+file_line { 'redirect_me':
   ensure => present,
   path   => '/etc/nginx/sites-available/default',
   after  => 'listen 80 default_server;',
@@ -20,8 +20,7 @@ file_line { 'redirect':
 
 service { 'nginx':
   ensure     => running,
-  enable     => true,
   hasrestart => true,
   require    => Package['nginx'],
-  subscribe  => File_line['redirect'],
+  subscribe  => File_line['redirect_me'],
 }
