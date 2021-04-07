@@ -5,8 +5,9 @@ package { 'nginx':
   name   => 'nginx',
 }
 
-file { '/usr/share/nginx/html/index.html':
-  path    => '/usr/share/nginx/html/index.html',
+file { '/var/www/html/index.html':
+  ensure  => present,
+  path    => '/var/www/html/index.html',
   content => 'Holberton School for the win!',
 }
 
