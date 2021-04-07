@@ -1,7 +1,7 @@
 # This manifest installs ngix and adds redirect page
 
 package { 'nginx':
-  ensure => installed,
+  ensure => present,
   name   => 'nginx',
 }
 
