@@ -20,6 +20,7 @@ file_line { 'redirect':
 
 service { 'nginx':
   ensure     => running,
+  enable     => true,
   hasrestart => true,
   require    => Package['nginx'],
   subscribe  => File_line['redirect'],
