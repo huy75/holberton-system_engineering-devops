@@ -13,6 +13,4 @@ sudo sed -i '/listen 80 default_server;/a error_page 404 /404.html; location = /
 
 sudo sed -i "/listen 80 default_server;/a add_header X-Served-By $HOSTNAME;" /etc/nginx/sites-available/default
 
-sudo service nginx reload
-
 sudo service nginx restart
