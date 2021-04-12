@@ -5,8 +5,9 @@ exec { 'update':
 }
 
 package {'nginx':
-  ensure => present,
-  name   => 'nginx',
+  ensure  => present,
+  name    => 'nginx',
+  require => Exec['update'],
 }
 
 file {'/var/www/html/index.html':
