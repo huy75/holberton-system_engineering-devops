@@ -31,11 +31,14 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-listen hbnb
+frontend load_balancer
         bind *:80
-             bind *:443 ssl crt /etc/ssl/certs/chainandkey.pem
-             http-request redirect scheme https code 301 if !{ ssl_fc }
+        bind *:443 ssl crt /etc/haproxy/certs/huy75.tech.pem
+        mode http
+        default_backend servers
+
+backend servers
         mode http
         balance roundrobin
-        server 2487-web-01 35.227.45.0:80 check
-        server 2487-web-02 35.237.153.115:80 check
+        server web-01 35.227.45.0:80 check
+        server web-02 35.237.153.115:80 check
