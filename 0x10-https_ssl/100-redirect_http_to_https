@@ -32,8 +32,21 @@ defaults
         errorfile 504 /etc/haproxy/errors/504.http
 
 frontend load_balancer
+        # set to listen for HTTP traffic on port 80
         bind *:80
+
+        # listen for HTTPS traffic on port 443, accept SSL traffic
+        # HTTPS traffic is decrypted using the file huy75.tech.pem
+        # which contains both the sites public & private SSL certificates
+        # The ssl parameter enables SSL termination
+        # The crt parameter identifies the location of SSL certificates
         bind *:443 ssl crt /etc/haproxy/certs/huy75.tech.pem
+
+        # redirect any traffic received at HTTP port 80 to HTTPS port 443
+        # unless means unless the traffic is received on port 443
+        # req: HAproxy should return a 301 Moved Permanently
+        # The 301 redirect is considered a best practice for
+        # upgrading users from HTTP to HTTPS
         http-request redirect scheme https code 301 unless { ssl_fc }
         mode http
         default_backend servers
