@@ -71,8 +71,6 @@ Share the URL of your diagram image in your answer file and il the field below.
 Please, remember that these blogs must be written in English to further your technical ability in a variety of settings.
 
 
-Done?  Help
-
 ### 2. Contribute!
 
 
