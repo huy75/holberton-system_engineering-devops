@@ -27,55 +27,14 @@ For this project, you will need to write Bash scripts to automate your work. All
 
 ## Your servers
 
-Name
+2487-web-01 `ubuntu` `35.227.45.0`
 
-Username
 
-IP
+2487-web-02 `ubuntu` `35.237.153.115`
 
-State
 
-2487-web-01
+2487-lb-01 `ubuntu` `35.196.122.98`
 
-`ubuntu`
-
-`35.227.45.0`
-
-running
-
-[Soft reboot](https://intranet.hbtn.io/servers/4834/soft_reboot)
-
-[Hard reboot](https://intranet.hbtn.io/servers/4834/hard_reboot)
-
-[Ask a new server](https://intranet.hbtn.io/servers/4834/ask_new)
-
-2487-web-02
-
-`ubuntu`
-
-`35.237.153.115`
-
-running
-
-[Soft reboot](https://intranet.hbtn.io/servers/5075/soft_reboot)
-
-[Hard reboot](https://intranet.hbtn.io/servers/5075/hard_reboot)
-
-[Ask a new server](https://intranet.hbtn.io/servers/5075/ask_new)
-
-2487-lb-01
-
-`ubuntu`
-
-`35.196.122.98`
-
-running
-
-[Soft reboot](https://intranet.hbtn.io/servers/5076/soft_reboot)
-
-[Hard reboot](https://intranet.hbtn.io/servers/5076/hard_reboot)
-
-[Ask a new server](https://intranet.hbtn.io/servers/5076/ask_new)
 
 ## Tasks
 
