@@ -1,0 +1,27 @@
+#
+# The MySQL database server configuration file.
+#
+# You can copy this to one of:
+# - "/etc/mysql/my.cnf" to set global options,
+# - "~/.my.cnf" to set user-specific options.
+#
+# One can use all long options that the program supports.
+# Run program with --help to get a list of available options and with
+# --print-defaults to see which it would actually understand and use.
+#
+# For explanations see
+# http://dev.mysql.com/doc/mysql/en/server-system-variables.html
+
+# https://www.digitalocean.com/community/tutorials/how-to-set-up-master-slave-replication-in-mysql
+
+[mysqld]
+
+# the number must be unique and cannot match any other server-id in your replication group
+server-id      = 1
+
+# This is where the real details of the replication are kept
+# The slave is going to copy all of the changes that are registered in the log
+log_bin        = /var/log/mysql/mysql-bin.log
+
+# designate the database that will be replicated on the slave server
+binlog_do_db   = tyrell_corp
